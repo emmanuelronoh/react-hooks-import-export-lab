@@ -1,10 +1,10 @@
-import "@testing-library/jest-dom";
-import { render } from "@testing-library/react";
-import Home from "../components/Home";
+import React from 'react';
+import { render } from '@testing-library/react';
+import Home from '../components/Home'; // Updated path
 
-test("it is exported as a default export", () => {
+test('it renders without crashing', () => {
   try {
-    expect(() => render(<Home />)).not.toThrow();
+    render(<Home />);
   } catch (e) {
     throw new Error("Make sure to export this component!");
   }

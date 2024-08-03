@@ -1,11 +1,11 @@
-import "@testing-library/jest-dom";
-import { render } from "@testing-library/react";
-import App from "../components/App";
+import React from 'react';
+import { render } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect'; // Import jest-dom matchers
+import App from '../components/App'; // Ensure this path is correct
 
-test("it renders without crashing", () => {
-  try {
-    expect(() => render(<App />)).not.toThrow();
-  } catch (e) {
-    throw new Error("Make sure to import the required components!");
-  }
+test('it renders without crashing', () => {
+  const { container } = render(<App />);
+  
+  // Check if the component renders by asserting that the container is in the document
+  expect(container).toBeInTheDocument();
 });

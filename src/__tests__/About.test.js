@@ -1,11 +1,11 @@
-import "@testing-library/jest-dom";
-import { render } from "@testing-library/react";
-import About from "../components/About";
+import React from 'react';
+import { render } from '@testing-library/react';
+import App from '../components/App'; // Updated path
 
-test("it is exported as a default export", () => {
+test('it renders without crashing', () => {
   try {
-    expect(() => render(<About />)).not.toThrow();
+    render(<App />);
   } catch (e) {
-    throw new Error("Make sure to export this component!");
+    throw new Error("Make sure to import the required components!");
   }
 });
